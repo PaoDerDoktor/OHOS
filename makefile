@@ -27,7 +27,7 @@ $(ODIR)/boot.bin:
 	@$(CASM) $(SRCDIR)/bootLoader.asm $(ASM_FLAGS) -o $(ODIR)/boot.bin
 
 $(ODIR)/full_kernel.bin: $(ODIR)/kernel_entry.o $(ODIR)/kernel.o $(ODIR)/datastructures/string.o $(ODIR)/io/printing.o
-	@$(LD) $(LD_FLAGS) $(ODIR)/kernel_entry.o $(ODIR)/kernel.o $(ODIR)/datastructures/string.o -o $(ODIR)/full_kernel.bin
+	@$(LD) $(LD_FLAGS) $(ODIR)/kernel_entry.o $(ODIR)/kernel.o $(ODIR)/datastructures/string.o $(ODIR)/io/printing.o -o $(ODIR)/full_kernel.bin
 
 $(ODIR)/kernel_entry.o:
 	@$(CASM) $(SRCDIR)/kernel_entry.asm -f elf -o $(ODIR)/kernel_entry.o
