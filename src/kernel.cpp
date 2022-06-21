@@ -4,13 +4,10 @@
 
 extern "C" void main() {
     print_s("Welcome to paradise city !!", 27);
-    
-    
 
-    // Trying to initialize string
-    string s("Hey coucou", 10);
+    string s("Hey coucou :3", 13);
 
-    print_s(s.get_raw_str(), s.get_size());
+    print_string(s);
 
     return;
 }
