@@ -1,3 +1,5 @@
+#pragma once
+
 /**
  * @brief A simple raw string wrapper
  */
