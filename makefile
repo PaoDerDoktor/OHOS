@@ -16,6 +16,7 @@ all: directories $(ODIR)/OS.bin
 directories:
 	@mkdir -p $(ODIR)
 	@mkdir -p $(ODIR)/datastructures
+	@mkdir -p $(ODIR)/io
 
 $(ODIR)/OS.bin: $(ODIR)/everything.bin $(ODIR)/stuff_disk.bin
 	@cat $(ODIR)/everything.bin $(ODIR)/stuff_disk.bin > $(ODIR)/OS.bin
