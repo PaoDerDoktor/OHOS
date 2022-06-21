@@ -26,7 +26,7 @@ $(ODIR)/everything.bin: $(ODIR)/boot.bin $(ODIR)/full_kernel.bin
 $(ODIR)/boot.bin:
 	@$(CASM) $(SRCDIR)/bootLoader.asm $(ASM_FLAGS) -o $(ODIR)/boot.bin
 
-$(ODIR)/full_kernel.bin: $(ODIR)/kernel_entry.o $(ODIR)/kernel.o $(ODIR)/datastructures/string.o
+$(ODIR)/full_kernel.bin: $(ODIR)/kernel_entry.o $(ODIR)/kernel.o $(ODIR)/datastructures/string.o $(ODIR)/io/printing.o
 	@$(LD) $(LD_FLAGS) $(ODIR)/kernel_entry.o $(ODIR)/kernel.o $(ODIR)/datastructures/string.o -o $(ODIR)/full_kernel.bin
 
 $(ODIR)/kernel_entry.o:
@@ -40,6 +40,9 @@ $(ODIR)/stuff_disk.bin:
 
 $(ODIR)/datastructures/string.o:
 	@$(CC) $(CPP_FLAGS) $(SRCDIR)/datastructures/string.cpp -o $(ODIR)/datastructures/string.o
+
+$(ODIR)/io/printing.o:
+	@$(CC) $(CPP_FLAGS) $(SRCDIR)/io/printing.cpp -o $(ODIR)/io/printing.o
 
 clean: # Just removing output directory
 	@rm -rf $(ODIR)/*
