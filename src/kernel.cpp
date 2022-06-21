@@ -1,5 +1,6 @@
 #include "kernel.hpp"
 #include "datastructures/string.hpp"
+#include "io/printing.hpp"
 
 extern "C" void main() {
     print_s("Welcome to paradise city !!", 27);
